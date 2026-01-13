@@ -1,0 +1,20 @@
+services:
+  php:
+    build:
+      context: ./php
+      dockerfile: dockerfile
+    command: ["php", "-S", "0.0.0.0:8000", "-t", "/app"]
+    ports:
+      - "8000:8000"
+  node_api:
+    build:
+      context: ./node_api
+      dockerfile: dockerfile
+    ports:
+      - "3000:3000"
+  vues_js:
+    build:
+      context: ./vues_js
+      dockerfile: dockerfile
+    ports:
+      - "8080:80"
